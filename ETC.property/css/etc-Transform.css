@@ -1,0 +1,22 @@
+.box{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: #0066ff;
+/* 
+    transform: translate(200px , 10px);
+    transform: scale( 1.4, 2);
+    transform: rotate(45deg); 
+    # tranform 하나씩 선언은 최근에 준 transform 만 들어감
+    ? 이유는 transform 함수 이기때문이라고 생각     
+*/
+
+    transform: translate(200px , 200px) scale( 1.5, 1) rotate(45deg);
+    /* @ 이렇게 한번에 transform 함수 쓸 거를 적용해줘요 한번에 먹음 */
+    
+}
+/* # 단위값을 % 을 쓸때 // 자기 자신을 기준으로 함 */
+
+p{
+    background-color: #44ddff;
+}

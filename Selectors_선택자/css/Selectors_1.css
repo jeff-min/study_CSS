@@ -1,0 +1,35 @@
+/* $   Type Selector : HTML 태그 샐렉터 */
+h1{
+    color: #06f;
+}
+
+
+/* $    Class Selector  */
+.red {
+    color: #ff4949;
+}
+
+.blue{
+    color: #06f;
+}
+.red .blue { 
+    color: #06f;
+    /* # 각각을 지칭해줌 // 총 2개 잡힘 */
+}
+.red.blue { 
+    color: #06f;
+    /* # 붙어 쓰면 1개를 지칭 .red이자.blue 인 클래스 */
+}
+
+
+/* $ ID Selectors */
+#red{
+    color: #ff4949;
+}
+
+/* 명확하게 해주기 위해  사용도 가능 */
+
+#red.red{
+    /* # ID red 이자 Class red 인 선택자 한개 */
+    color: #ff4949;
+}

@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins" , sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #0066ff;
+    /* ? keyframes 안에 말고도 애초에 .box에 색상을 준 이유 */
+    /* a? 기본 색상을 안주면  keyframes 이 끝난후에 배경색이 사라짐  */
+    animation-name: move-box;
+    animation-duration: 2000ms;
+    animation-timing-function: ease-in-out ;
+    animation-delay: 1000ms;
+    animation-iteration-count: 3;  /* infinite 무한 가능 */
+    animation-direction: alternate;
+}
+
+@keyframes move-box{
+    from{
+        top: 0;
+        background-color: #0066ff;
+    }
+    to{
+        top: 200px;
+        background-color: #ff4949;
+    }
+}
+
+/* 
+! animation - property 는 더 많지만 가장 많이들 사용하는 것 위주로 함
+    궁금 할 시 MDN 문서로 css animation 검색  
+    뿐만아니라 추가적으로 css 스팩을 보고싶을때 MDN !!!!!@!@!
+*/

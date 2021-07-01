@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Type-Block</title>
+</head>
+<body>
+    <h1>Box Type-Block</h1>
+    <pre>
+        Box Type : block / inline / inline-block  / flex 의 종류가 있다.
+
+        block  == >  길을 막다의 개념을 알자!
+
+        block 태그는 차곡차곡 쌓는 이미지인데 본인 다음으로 오는 block 을 옆자리에 오지 못하게 함
+            <!-- $ 2. 따로 width를 선언한 경우, 남은 공간은 margin으로 자동으로 채움
+                 # 이러하여 공간이 없으니 당연히 침범을 하지 못함. -->
+
+
+
+        Block 특징
+        1. 따로 width를 선언하지 않은 경우 , width = 부모의 content-box의 100%
+
+        2. 따로 width를 선언한 경우, 남은 공간은 margin으로 자동으로 채움
+            <!-- # 이러하여 공간이 없으니 당연히 침범을 하지 못함. -->
+        
+            <!-- ? ex) margin : 0 auto 이렇게 쓰면 중앙 정렬이 되는이유 -->
+            <!-- # margin-left ,  margin-right  을  auto 로 사이좋게 나눠 갖는다.
+            <!-- $  margin-left : 남은 margin(여백)을 왼쪽으로 모와줘라 라는 의미.-->
+            
+            <!--
+                so)  Block 특징상 남은 공간은 margin으로 자동 채워지는대  그 margin 을 왼쪽 오른쪽으로 배치하니 
+                so)  Block 은 중앙 배치가 되보이는것
+            -->
+        
+        3.box 모델에 있는 속성들은 다 적용이 가능하다 / width / height / padding / border .....
+
+        4.따로 부모의 height 을 선언하지 않을 경우 , 자식 요소의 height의 합 = 부모의 height
+            <!-- # 두개의 자식 박스의 height 값이 각각 140px 일때  부모의 height 은 280px 이다.-->
+    </pre>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position-1_</title>
+</head>
+<body>
+    <h1>Position-1_</h1>
+
+    <pre>
+
+        Position 에는 5가지의 종류가 있다.
+        1.static
+        2.relative
+        3.absolute
+        4.fixed
+        5.sticky
+
+        <!-- ! sticky 같은 경우에는 지원하는 브라우저가 그렇게 많지 않아서 제외-->
+
+        position 을 공부할 때는 2가지를 반드시 알아야한다.
+
+                Type                 - >                   기준점
+    어떤종류의 포지션을 사용하는지      ->  내가 사용하는 포지션은 무엇의 기준으로 움직이는지.
+
+    1. static 은 모든 요소의 기본 position 값 (일반적인 상태.)
+
+    2.  relative 의 기준점은 바로 자기자신이 원래 있었던 위치..!
+        <!-- # 원래 있던 자리를 기준으로 위 아래 좌우로 이동 시키는데
+             #  float 과 같이 붕 뜬건 맞으나  자신이 원래 있던 위치에 대해서는 기억을 하고 있기 때문에
+             #    다른 요쇼들이 인식할 수 있음 .
+            
+                @ 인식을 할 수 있으니 layout 을 망가트리지 않고 쉽게 쓸 수 있는 position 임.-->
+                
+    3.  absolute 는 float 와 비슷하다.
+            <!-- # 동일하게 붕떠서 부모가 영역을 잡을 수 없고  / absolute 가 되면 박스타입도 block 모델이 된다. -->
+            <!-- ! 단 한가지 차이는 float 은  // 나머지 인라인 요소들은  float을 인식하는 반면 -->
+            <!-- ! absolute는 그냥 혼자만 독자적으로 붕 떠있어서 인식하지 않는다. -->
+        
+            absolute 무엇을 기준으로 삼아서 위치시키나?
+            ==> 자신이 삼고싶은 기준점을 새로 삼을 수 있다.
+
+            <!-- ? 선택의 기준이 무엇이냐 -->
+            <!-- #  포지션이  static 이 아닌요소를 기준으로 해서 자기 자신을 위치 시킬 수 있다.-->
+
+            <!-- @ 그렇기 때문에 absolute을 사용할 때에는  어떤 조상요소로 움직일 것인지. 위치 파악 꼭 해야함. -->
+            <!-- so  static 이 아닌 포지션을 안전하게 사용할 수 있는 요소는 relative 이겠지!! -->
+
+            <!-- ! EX ) absolute 로 조상을 삼으면...조상도..또 자기 위치 찾을려고 부모를 찾게되겟지......-->
+
+    4.  fixed 는 absolute와 동일한 현상이 일어난다.
+    <!--  동일하게 붕떠서 부모가 영역을 잡을 수 없고  / absolute 가 되면 박스타입도 block 모델이 된다. -->
+
+            단 차이점은 fixed는 viewport 사이즈 기준으로 자신을 위치시킴.
+
+            <!-- $  viewport :  브라우저 창의 전체 크기.-->
+            <!-- # 뷰포트를 기준으로 고정되기 떄문에 데스크탑 / 모바일 이든 디바이스에 맞는 뷰포트 사이즈로부터 고정됨. -->
+
+            이제  위치를 이동시킬때 사용하는 CSS property 는 top/ bottom / left / right 인 속성인데 
+            중요한 Tip은 (가로 방향중) left /right 중 하나  (세로 방향중) top / bottom 중 하나만 사용하는게
+            
+            <!-- # 뷰포트 기준 (보여지는 브라우저 기준이니) 위치시키고 싶은 곳에 더 가깝게 이동 가능한 position CSS property 를 사용해라. -->
+
+        5. Z-index
+            (나머지 알아할 CSS- property)
+
+            position 된 요소들의 수직 방향으로서의 레벨  /  위치를 알려준다.
+            <!-- # 포지션 static 을 제외한 나머지 position type 사용할 시 요소를 붕 띄우는건 마찬가지지만.-->
+            <!-- @ 같은 공간에 layer 층이 아니게 할 수 있으며  / 거진 사용할때는 아랫층 요소를 반만 덮는 다던가   수직 layer 층이 필요할 때.-->
+            
+    </pre>
+</body>
+</html>

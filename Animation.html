@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="stylesheet" href="css/Animation.css">
+</head>
+<body>
+    <pre>
+    1.    animation VS transition 차이
+        transition : 전환   | css에 먹인 property 를 변화 할때
+        animation  : 그냥 주고 싶을 때 줄 수 있어서 자유도가 훨씬 큼
+
+        @keyframes name{
+            from{
+                /Rules
+            }
+            to{
+                /Rules
+            }
+        }
+        기본적인 구조로 사용하거나 0% {} 50%{ } 100%{} 수치화 해서 사용
+    2.    animation - property
+
+    name : 로직을 짠 animation-name 
+    @keyframes 으로 정의하기 // @keyframes name{}
+
+    duration : 지속시간
+    timing-function : 변화 가속도
+    delay : 지연 시간
+
+    iteration-count : 되풀이 몇번할꺼냐 / 반복 횟수 
+    숫자 /  infinite 무한 가능
+
+    direction   : 방향 진행
+    reverce  / alternate (번갈아가다) 
+
+    <!--! animation - property 는 더 많지만 가장 많이들 사용하는 것 위주로 함
+    궁금 할 시 MDN 문서로 css animation 검색  
+    뿐만아니라 추가적으로 css 스팩을 보고싶을때 MDN !!!!!@!@! -->
+    </pre>
+    <div class="box">
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+/*$ 자식선택자  Child*/
+/*@     > 꺽새 사용 */
+/*
+        parent > child
+*/
+/* 
+section > h1 {
+    font-size: 40px;
+    color: #ff4949;
+} */
+/* ! 이렇게 해도 우선순위는  밑에 적은거 처럼 나중에 적은 최신것으로 먼저 받음 */
+
+
+/* $ 자손선택자 Descendant */
+/* @    공백으로 띄어놓음 */
+/*
+        parent  Descendant
+*/
+
+section h1 {
+    color: #0066ff;
+}/* section 자손중에 모든 h1  // 자손이니까 큰범위*/
+
+section > h1 {
+    font-size: 40px;
+    color: #ff4949;
+}/* section 자식중에 h1 만 */
+
+
+/*$ 형제 선택자  Sibling Combinators*/
+/*@     ~ 또는 + 꺽새 사용 */
+/* parent ~ sibling */
+/* parent + sibling */
+
+.active{
+    
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.active ~ li {
+    color: #0066ff;
+}/* active 이후부터 ~ li 전채 */
+
+
+.active + li {
+    color: #ff4949;
+}/* active 바로 다음 li 하나만 지목 */
+
+
+/* # 형제 선택자는 자주 사용하진 않지만// 간간히 사용해야 할 때 있음 */

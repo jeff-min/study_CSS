@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float-2</title>
+</head>
+<body>
+    <h1>2.  How to fix it - 어떡해 바로 잡을 수 있는지</h1>
+    <pre>
+        1.  overflow : hidden; 
+        
+        붕뜬 자식박스를 찾아 줄 수 있다.
+        <!-- # 4.float 가 일어나면 block 박스들은 float 된 요소들을 없는 박스로 취급했지만
+             #   float 되었지만 박스들을 다시 인식한다. inline 요소들 뿐만아니라 / block 요소들도 
+             @  다시금 제자리를 찾음.-->
+
+        2.Clearfix
+        <!-- $ clear 속성은  / display : block  블록 타입한테만 줄 수 있다. -->
+        
+        <!-- $ clear : left   / 왼쪽에 float가 있다면 인식하게 해줌. -->
+        <!-- @ float :left 된 요소들이 있다면 정확하게 파악해서 이제 영향을 받지 않을거야. -->
+
+        3.가상요소 활용
+        <!-- ! 만약 모든 요소기 float가 되니 부모는 영역을 잡지 못하고 길을 잃은 상태 -->
+        <!-- ! 이럴땐 배웟듯이 다른 자식박스를 만들고 / clear : left 를 줘서  float 된 자식 박스들을 인식해
+             ! 부모 height 영역을 잡을 수 있게 하겠지만..... -->
+
+             <!-- ? 문제는 스타일적인 이슈 때문에 아무런 의미도 없는 html 요소를 만들어서
+                  ?  HTML Markup 을 더럽혀야 한다는건 프론트엔득  개발자로서 자존심 상하는 일이다.-->
+
+                    <!-- # 문제 해결 방법 -->
+                    <!-- # HTML 을 건들이지  않고 순전히 CSS 로만 처리 할 수 있는 방법
+                         @  CSS 가상요소 - Pseudo-Element 이용해서 해결-->
+
+                            <!-- $  Pseudo-Element 실제로는 HTML에는 존재 하지 않는 가상 요소에 + clear : left -->
+                            <!-- so HTML Markup 문제가 없어지며 / float 된 박스를 인식해 부모의 영역도 잡을 수 있음.-->
+
+                            
+                     <!-- # 사용 방법 -->
+                     <!-- # .클래스명::before  /    선택한 class박스 앞에 가상요소 만듦 -->
+                     <!-- # .클래스명::after   /    선택한 class박스 뒤에 가상요소 만듦 -->
+                     <!-- Pseudo 는 가짜의 의미니  보통  class 명을 Pseudo 으로 사용하면 좋겠지.-->
+                     
+                     <!-- @ 가상요소로 만들어낸 박스타입 display는 inline 타입이다. 
+                          @  그러하니 다른 박스 요소들 처럼 같은 박스 속성을 줄 수 있다  / 다만 css 만들어낸 요소일 뿐-->
+
+                            <!-- so) 전략은 float 된 자식을 갖고 있는 부모에 가장 마지막 부분에
+                                 so)  새로운 요소 Pseuod 가상요소를 만들어 clear : left 을 주며 float으로 인한 레이아웃 붕괴를 잡아주는 것.  -->
+                                
+                        <!-- !가상요소는  부모 박스에 줘야함 !!! 부모박스 가장 마자믹 부분에!
+                            #부모 , 자식 박스가 ul ,  li 라 할 때  li 에 가상요소를 주게되면 li 안에 float 을 인식하는 걸 만들잔 얘기여서
+                            @ ul 부모박스에 줘야 li 자식박스에 있는 float 의 영역을 인식해  부모박스의 영역(부피)를 만드는 것!!!!!!!
+
+                            that is / 영역을 잡게할려는 의도에 가상요소라서 딱히 문자라던가 컨텐츠가 들어갈 필요가 없기 떄문에 content : "" 을 기본적으로 해준다.
+                         -->
+                         <!--  ! 꼭 content 를 써줘야함 안써주면 / 가상요소가 생기지 않음. -->
+                            .Pseudo::after {
+                                content: "";
+
+                                display:block;
+                                clear:left
+                            }
+
+
+    </pre>
+</body>
+</html>

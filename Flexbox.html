@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+</head>
+<body>
+    <h1>Flexbox</h1>
+
+    <pre>
+        상대적으로 어려운 float 이나 position 을 미리 해본것 .
+        웬만하면 Flexbox 만 사용해도 된다.
+
+        Flexbox 는 일단
+        float 이나 position 할때는 프로세스에대해 어떻게 동작하는지 하나하나 설명 했지만.
+
+        Flexbox는 너무 완벽하다.  너무 잘 만들어져서
+
+        <!-- How it works  //  원리 이해  필요 없구 -->
+
+        How to use it     // 잘 사용하는 법이 중요하다
+
+            Flexbox 사용해서 정렬할때는 4가지 사고 방식만 기억하면 된다. (4 Step)
+
+            1. Flexbox 를 쓸거라는 선언!
+            2. 가로로 정렬인지 ?세로 정렬인지? 정하는 것
+            3. 한줄안에 다 정렬 할 지 / 상황에 따라 여러줄을 만들어 줘야 할 지
+
+            4. Flexbox 사용과정
+
+            1~~3 . Flexbox 준비과정
+
+            <!-- $  1. Flexbox 를 쓸거라는 선언! -->
+            .flexbox {
+
+            1.  display : flex
+
+            2.  display : inline-flex
+            }
+            <!--  # flex  / inline-flex 라고 선언하자 . -->
+
+            flex            - > block 이랑 비슷하지만 // block 은 할 수 없는 요소를 쉽게 정리 할 수 있는 특징이 있다.
+            inline-flex     - > inline-block 이랑 비슷하지만 // inline-block 은 할 수 없는 특징이 있다.
+
+            <!-- # 누구한테 선언 ? -->
+            정렬을 하고자 하는 요소를 감싸고 있는 부모 박스에게 선언을 하자!
+
+
+            <!-- $  2. 가로로 정렬인지 ?세로 정렬인지? 정하는 것-->
+            .flexbox {
+
+                flex-direction : row;
+
+                <!-- flex-direction : 속성값 종류; --> <!-- $ direction - 방향 -->
+                row | row-reverse | column | column-reverse
+
+
+                row                     - 가로 방향 정렬 
+                <!-- #row - 왼쪽에서 오른쪽인 [가로 방향]  쉽게 생각해서 글 읽는 방향 -->
+                column                  - 세로 방향 정렬
+                <!-- #column - 위에서 아래로 [세로 방향]   쉽게 생각해서 글은 아래줄로 내려가며 읽음 -->
+                -reverse 는 반대 방향 
+                <!-- ! 단 main axis 는 반대 방향으로  오른쪽에서 왼쪽으로  || 아래에서 위로 바뀌지만 -->
+                <!-- @   main 가 정확히 수직을 이루는 cross axis 는 동일하게  같은 방향  / 왼쪽에서 오른쪽 || 위에서 아래로  -->
+
+
+                flex 를 사용하면 보이지 않는 2개의 축 ( Axis ) 이 생긴다
+                이 Axis 가 flex-direction이 어떤 (값)방향으로 설정 되었는지에 따라 2개의 축 방향이  완전히 달라진다.
+                }
+                <!-- @ flexbox 를 본격적으로 정렬할 때에 2개의 Axis 가 매우매우 중요한 역할이다. -->
+
+                일단 )
+                Main aixs  와  Cross axis 가 생기는데
+
+            먼저 Main aixs 는 flex-direction 의 방향에 따라 생기고
+                Cross axis 는 Main aixs 와 정확히 수직을 이룬다.
+
+
+
+            <!-- $  3. 한줄안에 다 정렬 할 지 / 상황에 따라 여러줄을 만들어 줘야 할 지-->
+            .flexbox {
+
+            flex-wrap : nowrap;
+
+            <!-- flex-wrap : 속성값 종류; -->
+            nowrap | wrap 
+                }
+                <!-- # 기본 설정은 nowrap -->
+
+                1. nowrap            - >   여러줄 생성 X / 감싸지wrap 않고 자식의 사이즈를 줄여서라도 한 줄로 정렬해버리는 flex-wrap : nowrap
+                
+                2. wrap              - >   자식 요소가 절대 줄어들지 않아야 할 때 / 한 줄에 모두 정렬하기에 공간이 넉넉치 않으면 여러 줄을 만들어 자식 요소 사이즈를 유지하는 flex-wrap : wrap
+
+
+
+
+                <!-- $ 4. flex 사용하기 -->
+
+        <!--  @ main axis 축을 기준으로해서 뭔갈 정렬 해주고 싶을때는 justify-content  라는 CSS property 를 사용해서 정렬 
+              @ 그게아니라 수직 cross axis 로 정렬 해주고 싶을 때에는  align-items | align-content   CSS property 를 사용해서 정렬  -->
+
+                justify-content : 속성값        center | flex-start | flexr-end | space-between | space-around
+
+                center                      :   정렬 하고 싶은 방향으로 가운데 정렬
+                flex-start                  :   시작점으로 정렬!! // EX) row 왼쪽에서 오른쪽으로 가는방향이면  시작점은 왼쪽이니 [ 왼쪽정렬 ]
+                flexr-end                   :   도착점으로 정렬 !!  // EX ) 같은 상황이면 [ 오른쪽 정렬 ]
+                space-between               :   요소들 사이에 간격을 부모 width 에서 자식 width을 빼고 나머지 남은 간격을 균등하게 요소 사이사이 공간을 만들어줌.<!-- # 가장 좌측 우측은 없고 요소 사이만 -->
+                space-around                :   요소들 사이에 간격을 같게 해줌 // EX ) margin 간격을 동일하게 준거 처럼.                            <!-- # 가장 좌측 우측도 동일하게 간격 -->
+
+                align-items     : 속성값          같음.
+
+                <!-- # cross (수직) 정렬 할 때에는 ... 2가지 속성이 있었다 -->
+                align-items | align-content 의 차이는 ?
+
+                <!-- # flex-wrap : nowrap 이여서 무조건 한 줄 정렬을 한다면 그 차이를 알 수 없어서 하는 말.. 별다른 건 없음.  -->
+                <!-- ! align-contetn 를 사용할 때에는 의미가 있으려면은 //   flex-wrap 이 wrap 이 되어야한다. -->
+                <!-- ? 여러줄이 되어야만 하는 상황이라면??  wrap 을 사용해서 자식박스를 못받으면 내려보내 정렬 시킨다. -->
+
+                <!-- # 이과정에서 -->
+
+
+                align-content  은   justify-content 와 같게 전체를 하나만의 (흐름) cross axis 축으로  같게 하고 싶다 .  ///[방향과 정렬을 하는 flex line을 생성.]
+                <!-- # 그러니 내려보내서 정렬을 해도 하나의 흐름이니 //  내려오거나 or 원래 요소 줄이 있다면  cross axis 축으로 sapce 간격을 주는 속성도 쓸 수 있겠지.  -->
+
+                align-items    은   줄이 생긴만큼 flex line 을 만들어내고   // 즉 방향과 정렬성은 같으나 (흐름이)cross axis 여러개 생성
+                <!-- # 단 ) conetent 와 다르게  // 원래 cross axis 축의 요소가 없고  요소가 내려와 만들어졌다 해도
+                     # 그건  같은 흐름의 flex line 이 아니기 때문에  space 를 쓸 수 없을 뿐더러   // align-items 에 준 : 속성 값은 2개의 (흐름에) cross axis에 적용 되어버린다.-->
+
+                    <!-- ! 원래 cross axis 축의 요소가 없고  요소가 내려와 만들어졌을때  기본세팅은 cross axis 은 여러개 형성 되더라-->
+
+
+                <!-- @ 헷갈리다면 tip -->
+                <!-- todo ) 선   align-items  을 사용후 내뜻대로 안되면  //  후    align-content 으로 사용 -->
+
+
+                <!-- $ 5.  order  기능 -->
+
+                사실 우리는 Markup 순서대로 스타일을 해야한다. // 물론 CSS 로도  Markup 순서 상관 없이 위치 바꿀 순 있지만 너무 귀찮고 힘들 수 있다.
+                <!-- so ) flexbox 를 사용하면 Markup 순서와 상관없이 우리가 순서를 바꿀 수 있다. -->
+
+                .box1 {
+                        첫번째 박스
+                        order: 2;   <!-- # 첫번째 박스가  // 2번 위치로 -->
+                }
+                .box2 {
+                        두번째 박스
+                        order: 3;   <!-- # 두번째 박스가  // 3번 위치로 -->
+                }
+                .box3 {
+                        세번째 박스
+                        order: 1;   <!-- # 세번째 박스가  // 1번 위치로 -->
+                }
+
+                <!-- todo ) 이제 웬만하면 felx 로 다사용 
+                    @ 물론 float 을 알아야 할 때가 있긴 하다 // 옛날  레거시 코드(legacy code)를 볼 때나 상황에 따라서는 float를 사용하는 경우도 있다.  -->
+    </pre>
+</body>
+</html>

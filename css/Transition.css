@@ -1,0 +1,43 @@
+.box { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #0066ff;
+
+    transition: all 2500ms cubic-bezier(1,-1.62,1,1.38) 2000ms;
+    /* propery:all   |  duration:2500ms     | [timing-function] :cubic-bezier(1,-1.62,1,1.38)  |  [delay] :  2000ms*/
+    /* @ 개별적으로 property 마다  다른속성을 달리 줄 수 있음. */
+    /* code ) transition: font-size 100ms ease-out , background-color 2000ms cubic-bezier(1,-1.62,1,1.38) 2000ms 1000ms; 
+        # 콤마 중요 
+
+    */
+}
+/* ! 단 ) 이런식으로 클래스명을 하나더 주더라도 중복되는 property 속성은 당연히 나중에준 active의 속성으로 나옴
+    so )  원래 클래스.box에 자바스크립트로  / 클래스 .active 추가시 파란색에서 주황으로 바뀔 수 있는것 
+        그냥 class : box active 로 하면 .active 만 인식해서 흰색 배경에서 주황색으로 바뀜*/
+
+.box.active{
+    font-size: 30px;
+    background-color: #ff4949;
+    
+}
+
+/* 
+# transition이랑 animation을 누구에게 주어야하냐! 이 부분 은근히 헷갈리는 녀석
+
+    @변화가 일어나야 하는 녀석에게 선언하면 된다! 
+
+    <div class="parent">
+        <strong>hi</strong>
+    </div>
+가령 이런 코드가 있다고 하면
+
+so )    .parent의 배경색이 바뀌었으면 좋겠다 → 배경색이 바뀌는 대상이 .parent니까 .parent에게 transition이나 animation을 주시면 됩니다.
+so )    .parent안에 있는 strong 태그의 폰트 사이즈가 바뀌었으면 좋겠다 → 폰트 사이즈가 바뀌는 대상이 .parent가 아니라 그 안에 있는 strong이죠? 그럼 그 친구에게 transition / animation을 주시면 됩니다.
+*/

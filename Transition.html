@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link rel="stylesheet" href="css/Transition.css">
+</head>
+<body>
+    <pre>
+        CSS 하다보면 요소의 속성값이 바뀌어야 할 때가 생긴다.
+        애니메이션 처럼 스르륵 변화를 줄 수 있게 해줌.
+
+        4개자 속성을 알아야함.
+        property    |   duration    |   [timing-function]   |   [delay]
+                                        [timing-function]   |   [delay]  는 생락 가능
+        
+        property    : 어떤 속성을 변화 시킬건가
+        duration    : 변화 지속시간         | 단위 ms / s
+
+        <!-- # .box 와 .active 라는 클래스명이 있다. .box 클래스명에서 .active 라는 클래스도 얻었을때의 변화를 줄때
+        #   .box에 transition: all  바뀔려는 클래스에 transition 주기
+            .box 자체 내부적으로도 쓸 순 있다. 근대 보통은 바뀌는 변활르 주는거니까 2개이상 사용하겠지.-->
+
+        [timing-function]  : 변화의 속도 지정
+        ease-in     |   ease-out    |   ease-in-out     |   cubic-bezier()
+        ease-in : 천천히 바뀌다 나중에 빠르게
+        ease-out : 처음엔 빨리 나중에 천천히
+        ease-in-out : 짬뽕
+        cubic-bezier()  : 본인이 변화의 가속도를 재현하고 싶을때 사용
+        
+        [delay]  : 시간지연
+        <!-- ! 수학 주의  so 사이트 이용 -->
+        <!-- $ cubic-bezier()  란 곡선을 만드는 function -->
+        <!-- # https://cubic-bezier.com/ -->
+    
+    </pre>
+    <div class="box active">
+        Hello Box
+    </div>
+    <!-- 
+    # transition이랑 animation을 누구에게 주어야하냐! 이 부분 은근히 헷갈리는 녀석
+
+    @변화가 일어나야 하는 녀석에게 선언하면 된다! 
+
+    <div class="parent">
+        <strong>hi</strong>
+    </div>
+가령 이런 코드가 있다고 하면
+
+so )    .parent의 배경색이 바뀌었으면 좋겠다 → 배경색이 바뀌는 대상이 .parent니까 .parent에게 transition이나 animation을 주시면 됩니다.
+so )    .parent안에 있는 strong 태그의 폰트 사이즈가 바뀌었으면 좋겠다 → 폰트 사이즈가 바뀌는 대상이 .parent가 아니라 그 안에 있는 strong이죠? 그럼 그 친구에게 transition / animation을 주시면 됩니다.
+    -->
+</body>
+</html>

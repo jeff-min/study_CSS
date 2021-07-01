@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webfont</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Webfont.css">
+</head>
+<body>
+    <h1>Roboto</h1>
+
+    <pre>
+        Webfont 2가지 사용법
+
+                1. 그냥 갖다쓴다.
+                
+                무료로 폰트 제공하는 사이트 : https://fonts.google.com/ 구글폰트
+
+
+                2. 직접 제공한다.
+
+                    2-1 폰트를 다운 받는다.
+                    
+                    2-2 assets \ fots 폴더를 만들고 폰트들을 넣어둔다.
+
+                    2-3 fonts.css 파일에
+
+                        @font-face{
+                            font-family: Jeff;
+                            font-style: normal; /* itaric 채 아님 다 nomal이라 */
+                            font-weight: 300;
+                        
+                            src: url('/assets/fonts/NanumSquareRoundL.eot'); /* IE9 Compat Modes */
+                            src: url('/assets/fonts/NanumSquareRoundL.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                                 url('/assets/fonts/NanumSquareRoundL..woff2') format('woff2'), /* Super Modern Browsers */
+                                 url('/assets/fonts/NanumSquareRoundL..woff') format('woff'), /* Pretty Modern Browsers */
+                                 url('/assets/fonts/NanumSquareRoundL..ttf')  format('truetype'), /* Safari, Android, iOS */
+                        }
+
+                        @font-face 선언  family | style |  weight 를 적용
+                                        마지막으로 src :url () fromat () 을 적어주면 됌.
+
+                                        <!-- $ url  |  format   세트  :  각각의 브라우저마다 지원하는 폰트의 확장자가 다르다. 
+
+                                        # font face css trick 검색 
+                                           # https://css-tricks.com/snippets/css/using-font-face/ 사이트에서  찾음 url 형식  -->
+
+                    2-4 링크만 걸어주면 된다 . 
+                        1. html 에서 링크걸기 경로 열어서
+                        2. css 파일에서 @import 해주기
+
+
+    </pre>
+</body>
+</html>

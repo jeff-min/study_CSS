@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Selectors_5.css">
+    <title>CSS 선택자 우선순위</title>
+</head>
+<body>
+    <pre>
+        CSS 기본적으로 나중에 선언된 것이 그전에 선언되었던 것을 덮는다.
+
+        선택자 우선순위는 점수로 매겨저서 합산을 따진다.
+        딱히 점수 몇점을 생각하는것보다 
+            
+            ID      Class       type
+        1.금메달 2. 은메달 3. 동메달로  합산방식으로 생각해보자.
+
+        1. ID   점수가 가장 높음
+        원래 HTML 안에 id 는 하나만 사용해야 한다는게 명시 되어 있을 만큼 중요
+        
+        2. class / Pseudo-class
+
+
+        3. Type
+
+        단 룰을 깨는 예외도 있다
+        inline-style html 문서 안 태그에 바로 주는 style 방식이 우선순위로 적용한다.
+        !important  - 다 이겨버림 제일 최고봉 // inline-style도 이김
+
+        so ) inline-style 과  !important 는 자제하는게 좋다.
+            css 줘놓고 안먹으면서 찾을 때 생각을 깜박하고 있으니 힘듬 
+            디버깅 할 때 못찾고 해매게 하는 원인들임
+    </pre>
+    <p id="text" class="a b c d e f g h i j k l m n o">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eligendi soluta dolores veritatis delectus voluptatibus incidunt officiis illo sit saepe?
+    </p>
+</body>
+</html>

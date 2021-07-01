@@ -1,0 +1,45 @@
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+
+    width: 150px;
+    border-radius: 8px;
+    background-color: rgb(176, 119, 230);
+    
+}
+input {
+    width: 300px;
+    height: 20px;
+    border: 1px solid #e5e5e5;
+
+    outline: none;
+    box-shadow: none;
+    
+}
+/* @ 모든 가상클래스는 : 을 쓴다. */
+/* # :hover  커서를 올렸을 때 */
+a:hover{
+    background: #7d5bef;
+}
+/* # : active  눌렀을 떄 */
+a:active{
+    background: #592dea;
+}
+
+/* # : focus 눌려져서 focusing 상태가 됌 / input을 작성할 수 있는 상태가 되었을 때*/
+input:focus{
+    border-color: #1fb6ff;
+}
+input:active{
+    border-color: #85d7ff;
+}
+/*  # 어떤 상태나 조건에 부합 했을때 특별한 스타일을 주기 위해서 가상 클래스를 사용
+        다른것도 더 있지만 
+    @ 유저와 인터렉션이 좀 더 많은  /동적 가상 클랙스들 */
+
+

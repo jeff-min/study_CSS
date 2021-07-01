@@ -1,0 +1,64 @@
+@font-face{
+    font-family: Jeff;
+    font-style: normal; /* itaric 채 아님 다 nomal이라 */
+    font-weight: 300;
+
+    src: url('/assets/fonts/NanumSquareRoundL.eot'); /* IE9 Compat Modes */
+    src: url('/assets/fonts/NanumSquareRoundL.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/fonts/NanumSquareRoundL..woff2') format('woff2'), /* Super Modern Browsers */
+         url('/assets/fonts/NanumSquareRoundL..woff') format('woff'), /* Pretty Modern Browsers */
+         url('/assets/fonts/NanumSquareRoundL..ttf')  format('truetype'), /* Safari, Android, iOS */
+
+        /* ! svg 폰트 파일은 갖고 있지 않아서 주석처리 함. 
+        url('webfont.svg#svgFontName') format('svg'); */ /* Legacy iOS */
+}
+
+/* $ url  |  format   세트  :  각각의 브라우저마다 지원하는 폰트의 확장자가 다르다. */
+
+/* # font face css trick 검색 
+   # https://css-tricks.com/snippets/css/using-font-face/ 사이트에서  찾음 url 형식 */
+
+
+/* # NanumSquareRoundEB 에 끝에 L  font-weight 300  */
+
+
+@font-face{
+    font-family: Jeff;
+    font-style: normal; 
+    font-weight: 400;
+
+    src: url('/assets/fonts/NanumSquareRoundR.eot'); 
+    src: url('/assets/fonts/NanumSquareRoundR.eot?#iefix') format('embedded-opentype'), 
+         url('/assets/fonts/NanumSquareRoundR..woff2') format('woff2'), 
+         url('/assets/fonts/NanumSquareRoundR..woff') format('woff'), 
+         url('/assets/fonts/NanumSquareRoundR..ttf')  format('truetype'), 
+
+}/* # NanumSquareRoundEB 에 끝에 R 가 font-weight 400  */
+
+@font-face{
+    font-family: Jeff;
+    font-style: normal; 
+    font-weight: 700;
+
+    src: url('/assets/fonts/NanumSquareRoundB.eot'); 
+    src: url('/assets/fonts/NanumSquareRoundB.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/NanumSquareRoundB..woff2') format('woff2'), 
+         url('/assets/fonts/NanumSquareRoundB..woff') format('woff'), 
+         url('/assets/fonts/NanumSquareRoundB..ttf')  format('truetype'),
+
+}/*  # NanumSquareRoundEB 에 끝에 B 가 font-weight 700  */
+
+
+@font-face{
+    font-family: Jeff;
+    font-style: normal; 
+    font-weight: 800;
+
+    src: url('/assets/fonts/NanumSquareRoundEB.eot'); 
+    src: url('/assets/fonts/NanumSquareRoundEB.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/NanumSquareRoundEB..woff2') format('woff2'), 
+         url('/assets/fonts/NanumSquareRoundEB..woff') format('woff'), 
+         url('/assets/fonts/NanumSquareRoundEB..ttf')  format('truetype'),
+
+}/* #  NanumSquareRoundEB 에 끝에 EB 가 font-weight 800 */
+

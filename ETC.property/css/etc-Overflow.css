@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+p{
+    width: 500px;
+    height: 400px;
+    background-color: #06f;
+    /* overflow: auto; */
+}
+
+blockquote{
+    background-color: #ffc82c;
+}
+/* # 여기서 알 수 있듯이 p 태그와 blockquote 는 형제요소
+#   당연히 p태그  height :400px  이 끝나는 밑에줄에 바로 blockqueto가 배치됌
+@ 이래서 overflow 사용 해야함
+*/
+
+.box{
+    background-color : #ff4949;
+    width: 200px;
+    height: 300px;
+
+    overflow-x:scroll ;
+    overflow-y:hidden ;
+}
+
+/* # 이경우는 박스가 p 태그보다 더 작은상태여서 p 태그가 덮어서 .box 가 안보임
+    # 이때 x축 / y축 따로 property 조정 가능  */
